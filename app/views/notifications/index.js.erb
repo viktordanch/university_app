@@ -1,0 +1,11 @@
+// remove current content
+$("#sidebar-content").children().remove();
+
+// change "active" nav tab
+$("#nav-courses").removeClass('active');
+$("#nav-notifications").addClass('active');
+
+// load list of notifications
+$("#sidebar-content").append('<%= j render(partial:'notifications/list')%>');
+
+$("#sidebar-content").children().addClass("animated fadeIn");

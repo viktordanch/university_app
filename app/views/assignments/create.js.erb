@@ -1,0 +1,5 @@
+// add the new assignment to the grade carousel
+$("#myCarousel > .carousel-inner").append('<%= j render(partial:'grades/projected_grade', locals:{course: @course})%>');
+
+// flash notice
+$("#main").prepend('<%= j render(partial:'layouts/messages')%>');

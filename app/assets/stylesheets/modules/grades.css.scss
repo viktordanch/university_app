@@ -1,0 +1,76 @@
+#assignment-table {
+	vertical-align: middle;
+	th,td { text-align: center; }
+}
+
+.scores {
+	.tile {
+		display: inline-block;
+		border: 1px solid #ddd;
+		padding: 40px 10px;
+		text-align: center;
+		@include border-top-radius(5px);
+		@include border-bottom-radius(5px);
+		@include border-left-radius(5px);
+		@include border-right-radius(5px);
+	}
+
+	.projected {
+		color: $easel-blue;
+	}
+
+	.current { color: $yellow }
+
+	h1 { 
+		font-size: 48px;
+	}
+
+	h4 {
+		font-size: 12px;
+		padding-bottom: 10px;
+	}
+}
+#myCarousel {
+	
+	border: 1px solid #ddd;
+	@include border-top-radius(5px);
+	@include border-bottom-radius(5px);
+	@include border-left-radius(5px);
+	@include border-right-radius(5px);
+	float: right;
+}
+.carousel-control {
+	font-size: 30px;
+}
+
+.carousel-inner {
+	.item {
+		h1, h2, h3, h4, h5 {
+			margin-top: 0px;
+		}
+		padding: 20px 80px;
+	}
+	.tile {
+		display: inline-block;
+		border: 1px solid #ddd;
+		padding: 6px;
+		text-align: center;
+		@include border-top-radius(5px);
+		@include border-bottom-radius(5px);
+		@include border-left-radius(5px);
+		@include border-right-radius(5px);
+
+		h5 { margin-top: 0; }
+		span { font-size: 20px; }
+		small { font-size: 12px; }
+	}
+
+	form span {
+		font-size: 20px;
+		color: $easel-blue;
+	}
+
+	.past-deadline {
+		color: #b50505;
+	}
+}

@@ -1,0 +1,24 @@
+// add the course to my courses list
+$("#my-courses .nav.nav-tabs").append('<%= j render(partial:'courses/add_course', locals:{course: @course})%>');
+
+// fix select options, or remove select completely depending on option count
+if ($('#enrollment_course_id option').size() > 1) {
+	
+	// unselect the course
+	$("#enrollment_course_id option[value='<%= @course.id %>']").removeAttr("selected");
+	// remove course from the selector
+	$("#enrollment_course_id option[value='<%= @course.id %>']").remove();
+	// alert chosen that updates were performed so it can rebuild itself
+	$("#enrollment_course_id").trigger('liszt:updated');
+
+} 
+else {
+	pholder = $("#new_enrollment").parent();
+	// remove form
+	$("#new_enrollment").remove();
+	// append no more courses tag
+	pholder.append("<p>There are no additional courses for your university.</p>");
+}
+
+// flash notice
+$("#main").html('<%= j render(partial:'layouts/messages')%>');

@@ -1,0 +1,8 @@
+== Easel Student Edition
+
+Developer: Abdallah Soliman
+Company: Team Sapphire
+Description: A social grade tracking software for student use.
+
+
+

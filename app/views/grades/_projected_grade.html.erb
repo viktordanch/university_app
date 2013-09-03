@@ -1,0 +1,20 @@
+<% index ||= 0 %>
+<div class="item <%= "active" if  index == 0 %>">
+	<h3><%= grade.assignment.name %></h3>
+	<%= form_for(grade, html: { class: "mbn" }, remote: true) do |f| %>
+	  <%= f.text_field :score, id: "me", class: "input-target-grade", "data-slider" =>'true', "data-slider-range" => "0,#{grade.scored_from}", "data-slider-step" => "1", "value" => grade.score %>
+	  <span class="" id='score-display'><%= grade.score %></span>
+	  <%= button_tag(type: 'submit', class: "iconized-button") do %>
+	    <i class="icon-ok"></i>
+	  <% end %>
+	<% end %>
+	
+	<div class="tile">
+	    <h5>Due:</h5>
+		<span class="<%= "past-deadline" if grade.assignment.due_on.to_date < Date.today %>"><%= "#{(grade.assignment.due_on.to_date-Date.today).to_i}" %><small> Days</small></span>
+	</div>
+	<div class="tile">
+	    <h5>Weighted:</h5>
+		<span><%= "#{grade.assignment.assignment_type.weight}%" %></span>
+	</div>
+</div>

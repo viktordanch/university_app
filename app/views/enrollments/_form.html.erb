@@ -1,0 +1,12 @@
+<div class="mtm">
+	<% if !(@courses.empty? || @courses.nil?) %>
+	<%= form_for @enrollment, remote: true, :html => {:class => 'form-inline'} do |f|%>
+	  <%= f.label :course_id, "Find a Course" %><br />
+	  <%= f.select(:course_id, @courses.collect {|c| [c.name, c.id]})%>
+	  <%= f.submit('Add', class: 'btn btn-primary mls') %>
+	<% end %>
+	<% else %>
+	<p>There are no <%= "additional " if @courses.empty? %>courses for your university.</p>
+	<% end %>
+</div>
+

@@ -1,0 +1,25 @@
+<div class="row-fluid">
+  <% unless flash[:error] == "No university with domain #{current_student.email.split('@')[1]}." %>
+      <div id="sidebar" class="span3">
+        <ul class="sidebar-nav nav nav-pills">
+          <li id="nav-courses" class="prs active">
+            <%= link_to(enrollments_path, remote: true) do %>
+                Courses <i class="icon-user"></i>
+            <% end %>
+          </li>
+          <li id="nav-notifications">
+            <%= link_to(notifications_path, remote: true) do %>
+                Notifications <i class="icon-flag"></i>
+            <% end %>
+          </li>
+        </ul>
+        <div id="sidebar-content"><%= render "courses/course_summary" %></div>
+      </div>
+      <div id="panel" class="span9">
+      </div>
+  <% end %>
+</div>
+
+
+
+

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Easel Student</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <a class="brand" href="#">Easel</a>
+    <ul class="nav">
+      <% if student_signed_in? %>
+      <li><h5><%= "#{current_student.first_name} #{current_student.last_name}" %></h5></li>
+      <li><%= link_to "Sign out", destroy_student_session_path, method: :delete %></li>
+      <% else %>
+      <li><%= link_to "Sign In", new_student_session_path %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+<body>
+	<div class="container-fluid">
+    <div id="main" class="ptl">
+      <%= render 'layouts/messages' %>
+    </div>
+    <%= yield %>
+  </div>
+
+    <div id="khan-video1" class="modal hide fade" tabindex="-1" role="dialog">
+      <iframe width="560" height="315" src="http://www.youtube.com/embed/ihNZlp7iUHE" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <div id="khan-video2" class="modal hide fade" tabindex="-1" role="dialog">
+      <iframe width="560" height="315" src="http://www.youtube.com/embed/oRKxmXwLvUU" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <div id="khan-video3" class="modal hide fade" tabindex="-1" role="dialog">
+      <iframe width="560" height="315" src="http://www.youtube.com/embed/awzOvyMKeMA" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <div id="khan-video4" class="modal hide fade" tabindex="-1" role="dialog">
+      <iframe width="560" height="315" src="http://www.youtube.com/embed/lQ-dvt3V4yQ" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+</body>
+</html>

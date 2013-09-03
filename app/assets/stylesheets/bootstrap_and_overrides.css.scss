@@ -1,0 +1,21 @@
+// sapphire Color Mixins
+$easel-blue: rgb(66,170,239);
+$font-off-white: #eaebeb;
+
+// Twitter Bootstrap Variable Overrides
+$navbarBackground: $easel-blue;
+$navbarBackgroundHighlight: $easel-blue;
+$navbarLinkColor: $font-off-white;
+
+// Twitter's Bootstrap
+@import "bootstrap";
+@import "bootstrap-responsive";
+
+
+body { padding-top: 60px; }
+
+.navbar-inner {
+	padding: 10px;	
+	.nav   { float: right; }
+	.brand { margin-left: 0px; }
+}

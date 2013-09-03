@@ -1,0 +1,74 @@
+<div class="container-fluid">
+	<div id="messages"><%= render 'layouts/messages' %></div>
+  <div class="row-fluid">
+  	<div id="chart" class="span10" style="height:300px;">
+  		
+  	</div>
+  </div>
+  <div class="row-fluid ptl">
+	<div class="offset1 span10">
+		<table class="table table-striped">
+			<th>Name</th>
+			<th>Due</th>
+			<th>Class Avg</th>
+			<th>Grade</th>
+
+			<% @course.assignment_types.each do |c| %>
+				<% c.assignments.each do |a| %>
+					<tr>
+						<td><%= a.name %></td>
+						<td><%= a.due_on.strftime("%m/%d/%y") %></td>
+						<td><%= a.average %></td>
+						<td><%= format_grade Grade.student_grade_on_assignment(current_student, a).first %></td>
+					</tr>
+				<% end %>
+			<% end %>
+		</table>
+		<div>
+			
+		</div>
+	</div>
+  </div>
+  <div class="row-fluid">
+  	<div class="horizontal-slider span10 offset1 ptl">
+	  	<ul class="">
+	  		<li>
+				<a href="#khan-video1" class="" data-toggle="modal"><%= image_tag("http://img.youtube.com/vi/ihNZlp7iUHE/0.jpg", :alt => "rss feed") %></a>
+	  		</li>
+	  		<li>
+	  			<a href="#khan-video2" class="" data-toggle="modal"><%= image_tag("http://img.youtube.com/vi/oRKxmXwLvUU/0.jpg", :alt => "rss feed") %></a>
+	  		</li>
+	  		<li>
+				<a href="#khan-video3" class="" data-toggle="modal"><%= image_tag("http://img.youtube.com/vi/awzOvyMKeMA/0.jpg", :alt => "rss feed") %></a>
+	  		</li>
+	  		<li>
+	  			<a href="#khan-video4" class="" data-toggle="modal"><%= image_tag("http://img.youtube.com/vi/lQ-dvt3V4yQ/0.jpg", :alt => "rss feed") %></a>
+	  		</li>
+	  	</ul>
+	</div>
+
+	<div id="khan-video1" class="modal hide fade" tabindex="-1" role="dialog">
+	  <iframe width="560" height="315" src="http://www.youtube.com/embed/ihNZlp7iUHE" frameborder="0" allowfullscreen></iframe>
+	</div>
+	<div id="khan-video2" class="modal hide fade" tabindex="-1" role="dialog">
+	  <iframe width="560" height="315" src="http://www.youtube.com/embed/oRKxmXwLvUU" frameborder="0" allowfullscreen></iframe>
+	</div>
+	<div id="khan-video3" class="modal hide fade" tabindex="-1" role="dialog">
+	  <iframe width="560" height="315" src="http://www.youtube.com/embed/awzOvyMKeMA" frameborder="0" allowfullscreen></iframe>
+	</div>
+	<div id="khan-video4" class="modal hide fade" tabindex="-1" role="dialog">
+	  <iframe width="560" height="315" src="http://www.youtube.com/embed/lQ-dvt3V4yQ" frameborder="0" allowfullscreen></iframe>
+	</div>
+
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+

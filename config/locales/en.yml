@@ -1,0 +1,13 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+  faker:
+    course: 
+      name: [Basic Drawing - 4NVQI, Graphic Communication - ZE2B1, Digital Drawing - 6EU0H, Understand Architecture - X79PT, Visual Studies - 8S9FR, Architecture Design I - 8W8BL, History of Architecture I - H6V3C, Structures I - W71MR, Design Fundamentals I - YVCBU, Special Topics in Architecture - R4KRD, Intro Engineering - QCVMS, Intro to Sociology - VRN3V, Performance - GROHL, Intro to Computers & Programming - O6FR5, Public & Small Group Communication - QOWYN, Intro to Anthropology - NNXU4, Intro to the Solar System - PR7TR, Ancient Greek World - JGP9C, Elementary Greek I - XRD6W, Elementary Latin I - DOB8A]
+    assignment:
+      name: [/Quiz \d/, /Assignment \d/, /Test \d/, Midterm Exam, Final Exam]
+    eduemail: [case.edu, usc.edu, gatech.edu, purdue.edu, vt.edu, emory.edu, harvard.edu, princeton.edu, duke.edu, osu.edu]
+    
+
+

@@ -1,0 +1,10 @@
+<div>
+	<h5>New Assignment</h5>
+	<%= form_for @assignment, :html => {:class => 'form-inline'}, remote: true do |f|%>
+	  <%= f.select :assignment_type_id, @course.assignment_types.collect {|a| [a.name, a.id]} %>
+	  <%= f.text_field :name, placeholder: "Assignment name" %>
+	  <%= f.text_field :assigned_on, placeholder: "Assigned on" %> 
+	  <%= f.text_field :due_on, placeholder: "Due on" %> 
+	  <%= f.submit('Add', class: 'btn btn-primary') %>
+	<% end %>
+</div>

@@ -1,0 +1,15 @@
+.form-inline {
+	width: 100%;
+	
+	input[type="text"], select {
+		height: 20px;
+		font-size: 14px;
+		width: 22%;
+	}
+	
+	.btn {
+		line-height: 15px;
+		font-size: 11px;
+		padding-left: 10px;
+	}
+}

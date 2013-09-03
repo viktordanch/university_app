@@ -1,0 +1,15 @@
+// remove current content
+$("#sidebar-content").children().remove();
+
+// change "active" nav tab
+$("#nav-notifications").removeClass('active');
+$("#nav-courses").addClass('active');
+
+// load list of enrolled courses
+$("#sidebar-content").append('<%= j render(partial:'courses/course_summary')%>');
+
+// loads chosen for searchable selection of courses
+$('#enrollment_course_id').chosen({ width: "75%" });
+
+
+$("#sidebar-content").children().addClass("animated fadeIn");

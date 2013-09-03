@@ -1,0 +1,27 @@
+<div class="row-fluid">
+<div class="scores span4">
+	<div class="tile mrs current">
+		<h4>Current Grade</h4>
+		<h1>76%</h1>
+	</div>
+	<div class="tile projected">
+		<h4>Projected Grade</h4>
+		<h1>86%</h1>
+	</div>
+</div>
+
+<div id="myCarousel" class="carousel slide span8" data-interval="false">
+
+  <!-- Carousel items -->
+  <div class="carousel-inner">
+    <% @projected_grades.each_with_index do |grade, index| %>
+		<%= render partial: "grades/projected_grade", locals: {index: index, grade: grade} %>
+
+	<% end %>
+  </div>
+  <!-- Carousel nav -->
+  <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+  <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+</div>
+</div>
+

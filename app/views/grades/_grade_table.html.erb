@@ -1,0 +1,19 @@
+<table id="assignment-table" class="table table-striped table-bordered">
+	<thead>
+		<th>Name</th>
+		<th>Due</th>
+		<th>Class Average</th>
+		<th>Grade</th>
+	</thead>
+	<tbody>
+
+		<% @actual_grades.each do |grade| %>
+			<tr>
+				<td><%= grade.assignment.name %></td>
+				<td><%= grade.assignment.due_on.strftime("%m/%d/%y") %></td>
+				<td><%= "#{grade.assignment.average}%" %></td>
+				<td><%= grade.score %> <small>out of</small> <%= grade.scored_from %></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>

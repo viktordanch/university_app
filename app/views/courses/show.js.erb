@@ -1,0 +1,20 @@
+$("#panel").children().remove();
+$("#panel").append('<%= j render(partial:'courses/course_details', locals:{course: @course})%>');
+
+// initialize the slider using a step of one and the data-slider-range parameter
+$("[data-slider]").each(function(key, value) {
+	$(value).simpleSlider({
+		range: $(this).data("sliderRange").split(","),
+		step: 1
+	});
+});
+
+// on slider change event, update the label with the slider's current value
+$('[data-slider]').bind('slider:changed', function(event, data) {
+  $(this).parent('form').find('#score-display').text(data.value);
+});
+
+
+//plot_grade_progress();
+
+$("#panel").children().addClass("animated fadeInRightBig");

@@ -1,0 +1,18 @@
+<%= render "enrollments/form" %>
+<div id="my-courses">
+<ul class="nav nav-tabs nav-stacked">
+	<% @enrolled_in.each do |course| %>
+		<li>
+			<%= link_to course_path(course), remote:true do %>
+			  <h4><%= course.name %></h4>
+			  <h5><%= University.find(course.university_id).name %></h5>
+			  <span>Grade: 85%</span>
+			  <div>
+			    <h6>Description:</h6>
+			    <span><%= course.description %></span>
+			  </div>
+			<% end %>
+		</li>
+	<% end %>
+</ul>
+</div>
